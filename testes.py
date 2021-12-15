@@ -11,12 +11,12 @@ import sys, os
 # VARIAVEIS DE CONEXÃO
 host = "smtp.gmail.com"
 port = "587"
-login = "ezequieleoss1986@gmail.com"
-senha = "@Kauan12"
+login = "@gmail.com"
+senha = "123456"
 
 # ARMAZENAMENDO DA LISTA DE EMAIL
-##lista_email = "ezequieleoss1986@gmail.com,Danielaviera71@gmail.com,Danisantos@voegol.com.br,dev.lm.teste@outlook.com,devsdofuturo@outlook.com,agroluizgustavo@outlook.com,agroluizgustavo@gmail.com,maxijader@gmail.com,kyelclash@gmail.com"
-lista_email = "ezequieleoss1986@gmail.com,kyelclash@gmail.com"
+##lista_email = []
+lista_email = "01@gmail.com,02@gmail.com"
 
 # SEPARANDO OS EMAIL POR VIRGULAS
 destinos = lista_email.split(",")
@@ -60,7 +60,7 @@ for i in destinos:
     email_msg.attach(MIMEText(corpo, 'html')) #plai = Comum
 
     # LER UM ANEXO PARA ENVIAR
-    arquivo_caminho = "C:\\Users\Ezequiel\\Desktop\\projetobet\\testes.py"
+    arquivo_caminho = "C:\\Users\\Desktop\\projeto\\testes.py"
     attchment = open(arquivo_caminho, 'rb')
     
     # TRANSFORMANDO O ANEXO EM BASE64
