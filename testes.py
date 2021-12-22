@@ -9,14 +9,15 @@ import sys, os
 #=============================================
 
 # VARIAVEIS DE CONEXÃO
-host = "smtp.gmail.com"
+host = "smtp.office365.com"
 port = "587"
-login = "@gmail.com"
-senha = "123456"
+login = input("Digitar seu email para login: ")
+senha = input("Digitar sua senha: ")
 
 # ARMAZENAMENDO DA LISTA DE EMAIL
 ##lista_email = []
-lista_email = "01@gmail.com,02@gmail.com"
+lista_email = "..." #Inserir emails com virgulas separando
+print("Esses foram os E-mails enviados: ",lista_email)
 
 # SEPARANDO OS EMAIL POR VIRGULAS
 destinos = lista_email.split(",")
@@ -85,7 +86,7 @@ for i in destinos:
     email_msg.attach(MIMEText(corpo, 'html')) #plai = Comum
 
     # LER UM ANEXO PARA ENVIAR
-    arquivo_caminho = "C:\\Users\\Ezequiel\\Downloads\\Apresentação_Eletrotec.pdf"
+    arquivo_caminho = "C:\\Pasta anexos\\ProjetoEmailAutWeb\\Apresentação ESE.pdf"
     attchment = open(arquivo_caminho, 'rb')
     
     # TRANSFORMANDO O ANEXO EM BASE64
@@ -94,7 +95,7 @@ for i in destinos:
     encoders.encode_base64(att)
     
     # CRIAR UM CABEÇARIO DE ANEXO
-    att.add_header('Content-Disposition', f'attachment; filename=Apresentacao_Eletrotec.pdf')
+    att.add_header('Content-Disposition', 'attachment', filename='Apresentacao_Eletrotec.pdf')
     
     # FEXAMENTO DO ANEXO
     attchment.close()
